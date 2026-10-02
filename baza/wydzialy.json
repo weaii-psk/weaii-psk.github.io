@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Wydział Budownictwa i Architektury",
+    "shortName": "WBiA",
+    "color": "#743A33",
+    "textColor": "#FFFFFF"
+  },
+  {
+    "name": "Wydział Elektrotechniki, Automatyki i Informatyki",
+    "shortName": "WEAiI",
+    "color": "#EF7A1B",
+    "textColor": "#FFFFFF"
+  },
+  {
+    "name": "Wydział Inżynierii Środowiska, Geodezji i Energetyki Odnawialnej",
+    "shortName": "WIŚGiEO",
+    "color": "#006B42",
+    "textColor": "#FFFFFF"
+  },
+  {
+    "name": "Wydział Mechatroniki i Budowy Maszyn",
+    "shortName": "WMiBM",
+    "color": "#163F8B",
+    "textColor": "#FFFFFF"
+  },
+  {
+    "name": "Wydział Zarządzania i Modelowania Komputerowego",
+    "shortName": "WZiMK",
+    "color": "#818181",
+    "textColor": "#FFFFFF"
+  },
+  {
+    "name": "Pion Kanclerza",
+    "shortName": "Pion Kanclerza",
+    "color": "#C92130",
+    "textColor": "#FFFFFF"
+  }
+]

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kalendarz akademicki 2026/2027 – PŚk</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#C92130">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Portal PŚk">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="brand-text">
+          <strong>Kalendarz akademicki</strong>
+          <span>Politechnika Świętokrzyska · 2026/2027</span>
+        </div>
+      </div>
+      <nav class="quick" aria-label="Szybkie linki">
+        <a href="../"><span class="quick-icon psk-icon">P</span>Plan zajęć</a>
+        <a href="../baza/"><span class="quick-icon psk-icon">B</span>Baza pracowników</a>
+        <a href="https://usosweb.tu.kielce.pl/" target="_blank" rel="noopener"><img
+            src="https://www.google.com/s2/favicons?domain=usosweb.tu.kielce.pl&sz=32" alt="">USOS</a>
+        <a href="https://moodle.tu.kielce.pl/" target="_blank" rel="noopener"><img
+            src="https://www.google.com/s2/favicons?domain=moodle.tu.kielce.pl&sz=32" alt="">Moodle</a>
+        <a href="https://achilles.tu.kielce.pl/portal/" target="_blank" rel="noopener"><img
+            src="https://www.google.com/s2/favicons?domain=achilles.tu.kielce.pl&sz=32" alt="">Achilles</a>
+        <a href="https://tu.kielce.pl/" target="_blank" rel="noopener"><img
+            src="https://www.google.com/s2/favicons?domain=tu.kielce.pl&sz=32" alt="">PŚk</a>
+      </nav>
+    </header>
+
+    <div class="toolbar">
+      <div class="controls">
+        <div class="seg cycle">
+          <button class="active" data-v="standard">Cykl standardowy</button>
+          <button data-v="msc1">I semestr II stopnia</button>
+        </div>
+        <label class="switch-control">
+          <input type="checkbox" id="toggle-ns" checked>
+          <span class="switch"></span>
+          <span>Niestacjonarne</span>
+        </label>
+      </div>
+      <div id="periodTitle"></div>
+    </div>
+
+    <div class="legend">
+      <span><i class="teaching"></i>Dzień zajęć</span>
+      <span><i class="grayday"></i>Weekend / wolne</span>
+      <span><i class="holidaymark"></i>Święto</span>
+      <span><i class="border-meeting"></i>Zjazd niestacjonarnych</span>
+      <span><i class="lecture"></i>Zjazd – wykłady</span>
+      <span><i class="replacement"></i>Zamiana planu</span>
+      <span><i class="exam"></i>Sesja</span>
+      <span><i class="resit"></i>Poprawki</span>
+      <span><i class="registration"></i>Rejestracja</span>
+      <span><i class="inauguration"></i>Inauguracja</span>
+    </div>
+
+    <div id="calendar" class="calendar year"></div>
+  </main>
+  <aside id="drawer" class="drawer"><button id="close" class="close">Zamknij ×</button>
+    <div id="drawerContent"></div>
+  </aside>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/service-worker.js", {
+            scope: "/"
+          })
+          .catch(error => {
+            console.error(
+              "Błąd rejestracji PWA:",
+              error
+            );
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

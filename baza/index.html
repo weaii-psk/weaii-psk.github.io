@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Katalog pracowników PŚk</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#C92130">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Portal PŚk">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="brand-text">
+          <strong>Baza pracowników</strong>
+          <span>Politechnika Świętokrzyska</span>
+        </div>
+      </div>
+      <nav class="quick" aria-label="Szybkie linki">
+        <a href="https://usosweb.tu.kielce.pl/" target="_blank" rel="noopener noreferrer">
+          <img src="https://usosweb.tu.kielce.pl/favicon.ico" alt="">USOS
+        </a>
+        <a href="https://moodle.tu.kielce.pl/" target="_blank" rel="noopener noreferrer">
+          <img src="https://weaii-moodle.tu.kielce.pl/favicon.ico" alt="">Moodle
+        </a>
+        <a href="https://achilles.tu.kielce.pl/portal/" target="_blank" rel="noopener noreferrer">
+          <img src="https://achilles.tu.kielce.pl/portal/favicon.ico" alt="">Achilles
+        </a>
+        <a href="https://tu.kielce.pl/" target="_blank" rel="noopener noreferrer">
+          <img src="https://tu.kielce.pl/favicon.ico" alt="">PŚk
+        </a>
+        <a href="../kalendarz/"><span class="quick-calendar-icon">K</span>Kalendarz</a>
+        <a href="../"><span class="quick-calendar-icon">P</span>Plan zajęć</a>
+      </nav>
+    </header>
+
+    <section class="page-header">
+      <div>
+        <p class="eyebrow">Politechnika Świętokrzyska</p>
+        <h1>Katalog pracowników</h1>
+        <p class="subtitle">Wyszukiwarka pracowników i jednostek organizacyjnych</p>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-label="Wyszukiwanie pracowników">
+      <label class="search-label" for="search">Szukaj pracownika</label>
+      <div class="search-row">
+        <input type="search" id="search" placeholder="Nazwisko, imię, wydział, katedra, pokój…" autocomplete="off"
+          aria-describedby="count">
+        <button class="clear-button" id="clear" type="button">Wyczyść</button>
+      </div>
+    </section>
+
+    <div class="results-bar">
+      <div class="count" id="count" role="status" aria-live="polite">Ładowanie bazy…</div>
+    </div>
+    <section class="grid" id="results" aria-label="Wyniki wyszukiwania"></section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+                .register("/service-worker.js", {
+                    scope: "/"
+                })
+                .catch(error => {
+                    console.error(
+                        "Błąd rejestracji PWA:",
+                        error
+                    );
+                });
+        });
+    }
+</script>
+</body>
+
+</html>

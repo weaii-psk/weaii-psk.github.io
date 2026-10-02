@@ -1,0 +1,836 @@
+{
+  "academicYear": "2026/2027",
+  "modes": {
+    "stationary": {
+      "label": "Stacjonarne"
+    },
+    "nonstationary": {
+      "label": "Niestacjonarne"
+    }
+  },
+  "cycles": {
+    "standard": {
+      "label": "Cykl standardowy"
+    },
+    "msc1": {
+      "label": "I semestr studiów II stopnia"
+    }
+  },
+  "stationary": {
+    "standard": {
+      "periods": [
+        {
+          "type": "teaching",
+          "semester": "winter",
+          "start": "2026-10-01",
+          "end": "2027-01-31",
+          "label": "Zajęcia dydaktyczne – semestr zimowy"
+        },
+        {
+          "type": "teaching",
+          "semester": "summer",
+          "start": "2027-03-01",
+          "end": "2027-06-27",
+          "label": "Zajęcia dydaktyczne – semestr letni"
+        }
+      ],
+      "academicPeriods": [
+        {
+          "type": "exam",
+          "start": "2027-02-01",
+          "end": "2027-02-05",
+          "label": "Sesja egzaminacyjna – studia stacjonarne"
+        },
+                {
+          "type": "exam",
+          "start": "2027-02-08",
+          "end": "2027-02-12",
+          "label": "Sesja egzaminacyjna – studia stacjonarne"
+        },
+        {
+          "type": "resit",
+          "start": "2027-02-15",
+          "end": "2027-02-19",
+          "label": "Sesja poprawkowa – studia stacjonarne"
+        },
+        {
+          "type": "registration",
+          "start": "2027-02-22",
+          "end": "2027-02-26",
+          "label": "Okres rejestracji i podejmowania indywidualnych decyzji – studia stacjonarne"
+        },
+        {
+          "type": "exam",
+          "start": "2027-06-28",
+          "end": "2027-07-02",
+          "label": "Sesja egzaminacyjna – studia stacjonarne"
+        },
+                {
+          "type": "exam",
+          "start": "2027-07-05",
+          "end": "2027-07-09",
+          "label": "Sesja egzaminacyjna – studia stacjonarne"
+        },
+        {
+          "type": "resit",
+          "start": "2027-09-06",
+          "end": "2027-09-10",
+          "label": "Sesja poprawkowa – studia stacjonarne"
+        },
+                {
+          "type": "resit",
+          "start": "2027-09-13",
+          "end": "2027-09-17",
+          "label": "Sesja poprawkowa – studia stacjonarne"
+        },
+        {
+          "type": "registration",
+          "start": "2027-09-20",
+          "end": "2027-09-30",
+          "label": "Okres rejestracji i podejmowania indywidualnych decyzji – studia stacjonarne"
+        }
+      ]
+    },
+    "msc1": {
+      "periods": [
+        {
+          "type": "teaching",
+          "semester": "summer",
+          "start": "2027-03-08",
+          "end": "2027-07-04",
+          "label": "Zajęcia dydaktyczne – I semestr (letni) studiów II stopnia"
+        }
+      ],
+      "academicPeriods": [
+        {
+          "type": "exam",
+          "start": "2027-07-05",
+          "end": "2027-07-09",
+          "label": "Sesja egzaminacyjna – I semestr II stopnia"
+        },
+        {
+          "type": "resit",
+          "start": "2027-07-12",
+          "end": "2027-07-16",
+          "label": "Sesja poprawkowa – I semestr II stopnia"
+        },
+        {
+          "type": "registration",
+          "start": "2027-09-06",
+          "end": "2027-09-17",
+          "label": "Okres rejestracji i podejmowania indywidualnych decyzji"
+        }
+      ]
+    },
+    "events": [
+      {
+        "date": "2026-12-22",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w środę, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 3,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2027-01-07",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak we wtorek, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 2,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2027-01-08",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w środę, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 3,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2027-03-31",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w poniedziałek, tydzień parzysty",
+        "replacement": {
+          "weekday": 1,
+          "parity": "p"
+        }
+      },
+      {
+        "date": "2027-04-01",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak we wtorek, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 2,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2027-04-02",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w piątek, tydzień parzysty",
+        "replacement": {
+          "weekday": 5,
+          "parity": "p"
+        }
+      },
+      {
+        "date": "2027-05-10",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w poniedziałek, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 1,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2027-05-11",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w czwartek, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 4,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2027-05-12",
+        "type": "replacement",
+        "title": "Zajęcia według innego planu",
+        "detail": "Zajęcia jak w piątek, tydzień nieparzysty",
+        "replacement": {
+          "weekday": 5,
+          "parity": "n"
+        }
+      },
+      {
+        "date": "2026-09-30",
+        "type": "inauguration",
+        "title": "Inauguracja na wydziałach",
+        "detail": "Inauguracja na wydziałach"
+      }
+    ],
+    "legendEvents": [
+      {
+        "type": "inauguration",
+        "label": "Inauguracja na wydziałach"
+      },
+      {
+        "type": "exam",
+        "label": "Sesja egzaminacyjna"
+      },
+      {
+        "type": "resit",
+        "label": "Sesja poprawkowa"
+      },
+      {
+        "type": "registration",
+        "label": "Okres rejestracji / decyzji indywidualnych"
+      },
+      {
+        "type": "free",
+        "label": "Dni wolne od zajęć"
+      },
+      {
+        "type": "culture",
+        "label": "Studencka Wiosna Kulturalna – dni wolne od zajęć"
+      },
+      {
+        "type": "children",
+        "label": "PŚk Dzieciom – Świat Młodego Odkrywcy – dzień wolny od zajęć"
+      }
+    ]
+  },
+  "nonstationary": {
+    "standard": {
+      "meetings": [
+        [
+          "I",
+          "2026-10-02",
+          "2026-10-04",
+          ""
+        ],
+        [
+          "II",
+          "2026-10-09",
+          "2026-10-09",
+          "Wykłady"
+        ],
+        [
+          "III",
+          "2026-10-16",
+          "2026-10-18",
+          ""
+        ],
+        [
+          "IV",
+          "2026-10-23",
+          "2026-10-25",
+          ""
+        ],
+        [
+          "V",
+          "2026-11-06",
+          "2026-11-08",
+          ""
+        ],
+        [
+          "VI",
+          "2026-11-13",
+          "2026-11-13",
+          "Wykłady"
+        ],
+        [
+          "VII",
+          "2026-11-20",
+          "2026-11-22",
+          ""
+        ],
+        [
+          "VIII",
+          "2026-12-04",
+          "2026-12-06",
+          ""
+        ],
+        [
+          "IX",
+          "2026-12-11",
+          "2026-12-11",
+          "Wykłady"
+        ],
+        [
+          "X",
+          "2026-12-18",
+          "2026-12-20",
+          ""
+        ],
+        [
+          "XI",
+          "2027-01-08",
+          "2027-01-10",
+          ""
+        ],
+        [
+          "XII",
+          "2027-01-15",
+          "2027-01-17",
+          ""
+        ],
+        [
+          "I",
+          "2027-03-05",
+          "2027-03-07",
+          ""
+        ],
+        [
+          "II",
+          "2027-03-12",
+          "2027-03-12",
+          "Wykłady"
+        ],
+        [
+          "III",
+          "2027-03-19",
+          "2027-03-21",
+          ""
+        ],
+        [
+          "IV",
+          "2027-04-02",
+          "2027-04-04",
+          ""
+        ],
+        [
+          "V",
+          "2027-04-09",
+          "2027-04-09",
+          "Wykłady"
+        ],
+        [
+          "VI",
+          "2027-04-16",
+          "2027-04-18",
+          ""
+        ],
+        [
+          "VII",
+          "2027-04-23",
+          "2027-04-25",
+          ""
+        ],
+        [
+          "VIII",
+          "2027-05-07",
+          "2027-05-09",
+          ""
+        ],
+        [
+          "IX",
+          "2027-05-14",
+          "2027-05-14",
+          "Wykłady"
+        ],
+        [
+          "X",
+          "2027-05-21",
+          "2027-05-23",
+          ""
+        ],
+        [
+          "XI",
+          "2027-06-04",
+          "2027-06-06",
+          ""
+        ],
+        [
+          "XII",
+          "2027-06-11",
+          "2027-06-13",
+          ""
+        ]
+      ],
+      "periods": [
+        {
+          "type": "exam",
+          "start": "2027-01-29",
+          "end": "2027-01-31",
+          "label": "Sesja egzaminacyjna"
+        },
+        {
+          "type": "exam",
+          "start": "2027-02-05",
+          "end": "2027-02-07",
+          "label": "Sesja egzaminacyjna"
+        },
+        {
+          "type": "resit",
+          "start": "2027-02-12",
+          "end": "2027-02-14",
+          "label": "Sesja poprawkowa"
+        },
+        {
+          "type": "resit",
+          "start": "2027-02-19",
+          "end": "2027-02-21",
+          "label": "Sesja poprawkowa"
+        },
+        {
+          "type": "registration",
+          "start": "2027-02-28",
+          "end": "2027-02-28",
+          "label": "Termin rejestracji / decyzji indywidualnych"
+        },
+        {
+          "type": "exam",
+          "start": "2027-06-25",
+          "end": "2027-06-27",
+          "label": "Sesja egzaminacyjna"
+        },
+        {
+          "type": "exam",
+          "start": "2027-07-02",
+          "end": "2027-07-04",
+          "label": "Sesja egzaminacyjna"
+        },
+        {
+          "type": "resit",
+          "start": "2027-09-03",
+          "end": "2027-09-05",
+          "label": "Sesja poprawkowa"
+        },
+        {
+          "type": "resit",
+          "start": "2027-09-10",
+          "end": "2027-09-12",
+          "label": "Sesja poprawkowa"
+        },
+        {
+          "type": "registration",
+          "start": "2027-09-30",
+          "end": "2027-09-30",
+          "label": "Termin rejestracji / decyzji indywidualnych"
+        }
+      ]
+    }
+  },
+  "weekSchedule": {
+    "standard": [
+      [
+        "2026-09-28",
+        "2026-10-04",
+        "1",
+        "n"
+      ],
+      [
+        "2026-10-05",
+        "2026-10-11",
+        "2",
+        "p"
+      ],
+      [
+        "2026-10-12",
+        "2026-10-18",
+        "3",
+        "n"
+      ],
+      [
+        "2026-10-19",
+        "2026-10-25",
+        "4",
+        "p"
+      ],
+      [
+        "2026-10-26",
+        "2026-11-01",
+        "5",
+        "n"
+      ],
+      [
+        "2026-11-02",
+        "2026-11-08",
+        "6",
+        "p"
+      ],
+      [
+        "2026-11-09",
+        "2026-11-15",
+        "7",
+        "n"
+      ],
+      [
+        "2026-11-16",
+        "2026-11-22",
+        "8",
+        "p"
+      ],
+      [
+        "2026-11-23",
+        "2026-11-29",
+        "9",
+        "n"
+      ],
+      [
+        "2026-11-30",
+        "2026-12-06",
+        "10",
+        "p"
+      ],
+      [
+        "2026-12-07",
+        "2026-12-13",
+        "11",
+        "n"
+      ],
+      [
+        "2026-12-14",
+        "2026-12-20",
+        "12",
+        "p"
+      ],
+      [
+        "2026-12-21",
+        "2026-12-27",
+        "1",
+        "n"
+      ],
+      [
+        "2026-12-28",
+        "2027-01-03",
+        "1/7",
+        "n"
+      ],
+      [
+        "2027-01-04",
+        "2027-01-10",
+        "13",
+        "n"
+      ],
+      [
+        "2027-01-11",
+        "2027-01-17",
+        "14",
+        "p"
+      ],
+      [
+        "2027-01-18",
+        "2027-01-24",
+        "15",
+        "n"
+      ],
+      [
+        "2027-03-01",
+        "2027-03-07",
+        "1",
+        "n"
+      ],
+      [
+        "2027-03-08",
+        "2027-03-14",
+        "2",
+        "p"
+      ],
+      [
+        "2027-03-15",
+        "2027-03-21",
+        "3",
+        "n"
+      ],
+      [
+        "2027-03-22",
+        "2027-03-28",
+        "4",
+        "p"
+      ],
+      [
+        "2027-03-29",
+        "2027-04-04",
+        "4/9/12",
+        "n/p"
+      ],
+      [
+        "2027-04-05",
+        "2027-04-11",
+        "5",
+        "n"
+      ],
+      [
+        "2027-04-12",
+        "2027-04-18",
+        "6",
+        "p"
+      ],
+      [
+        "2027-04-19",
+        "2027-04-25",
+        "7",
+        "n"
+      ],
+      [
+        "2027-04-26",
+        "2027-05-02",
+        "8",
+        "p"
+      ],
+      [
+        "2027-05-03",
+        "2027-05-09",
+        "9",
+        "n"
+      ],
+      [
+        "2027-05-10",
+        "2027-05-16",
+        "9/11",
+        "n"
+      ],
+      [
+        "2027-05-17",
+        "2027-05-23",
+        "10",
+        "p"
+      ],
+      [
+        "2027-05-24",
+        "2027-05-30",
+        "11",
+        "n"
+      ],
+      [
+        "2027-05-31",
+        "2027-06-06",
+        "12",
+        "p"
+      ],
+      [
+        "2027-06-07",
+        "2027-06-13",
+        "13",
+        "n"
+      ],
+      [
+        "2027-06-14",
+        "2027-06-20",
+        "14",
+        "p"
+      ],
+      [
+        "2027-06-21",
+        "2027-06-27",
+        "15",
+        "n"
+      ]
+    ],
+    "msc1": [
+      [
+        "2027-03-08",
+        "2027-03-14",
+        "2",
+        "p"
+      ],
+      [
+        "2027-03-15",
+        "2027-03-21",
+        "3",
+        "n"
+      ],
+      [
+        "2027-03-22",
+        "2027-03-28",
+        "4",
+        "p"
+      ],
+      [
+        "2027-03-29",
+        "2027-04-04",
+        "4/9/12",
+        "n/p"
+      ],
+      [
+        "2027-04-05",
+        "2027-04-11",
+        "5",
+        "n"
+      ],
+      [
+        "2027-04-12",
+        "2027-04-18",
+        "6",
+        "p"
+      ],
+      [
+        "2027-04-19",
+        "2027-04-25",
+        "7",
+        "n"
+      ],
+      [
+        "2027-04-26",
+        "2027-05-02",
+        "8",
+        "p"
+      ],
+      [
+        "2027-05-03",
+        "2027-05-09",
+        "9",
+        "n"
+      ],
+      [
+        "2027-05-10",
+        "2027-05-16",
+        "9/11",
+        "n"
+      ],
+      [
+        "2027-05-17",
+        "2027-05-23",
+        "10",
+        "p"
+      ],
+      [
+        "2027-05-24",
+        "2027-05-30",
+        "11",
+        "n"
+      ],
+      [
+        "2027-05-31",
+        "2027-06-06",
+        "12",
+        "p"
+      ],
+      [
+        "2027-06-07",
+        "2027-06-13",
+        "13",
+        "n"
+      ],
+      [
+        "2027-06-14",
+        "2027-06-20",
+        "14",
+        "p"
+      ],
+      [
+        "2027-06-21",
+        "2027-06-27",
+        "15",
+        "n"
+      ],
+      [
+        "2027-06-28",
+        "2027-07-04",
+        "1",
+        "n"
+      ]
+    ]
+  },
+  "holidays": [
+    [
+      "2026-11-01",
+      "Wszystkich Świętych"
+    ],
+    [
+      "2026-11-11",
+      "Narodowe Święto Niepodległości"
+    ],
+    [
+      "2026-12-24",
+      "Wigilia"
+    ],
+    [
+      "2026-12-25",
+      "Boże Narodzenie"
+    ],
+    [
+      "2026-12-26",
+      "Drugi dzień Bożego Narodzenia"
+    ],
+    [
+      "2027-01-01",
+      "Nowy Rok"
+    ],
+    [
+      "2027-01-06",
+      "Święto Trzech Króli"
+    ],
+    [
+      "2027-03-28",
+      "Wielkanoc"
+    ],
+    [
+      "2027-03-29",
+      "Poniedziałek Wielkanocny"
+    ],
+    [
+      "2027-05-01",
+      "Święto Pracy"
+    ],
+    [
+      "2027-05-03",
+      "Święto Konstytucji 3 Maja"
+    ],
+    [
+      "2027-05-16",
+      "Zielone Świątki"
+    ],
+    [
+      "2027-05-27",
+      "Boże Ciało"
+    ],
+    [
+      "2027-08-15",
+      "Wniebowzięcie NMP"
+    ]
+  ]
+}

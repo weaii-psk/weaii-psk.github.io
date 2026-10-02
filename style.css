@@ -1,0 +1,123 @@
+
+:root{
+  --bg:#111214; --surface:#191a1d; --surface-2:#202125; --surface-3:#27282c;
+  --line:#34363b; --line-soft:#292b2f; --text:#f2f2f2; --muted:#a9abb1;
+  --psk:#c61f32; --psk-hover:#df2a40; --slot:68px;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:14px Arial,"Segoe UI",sans-serif}
+button,input,select{font:inherit}
+button{color:inherit}
+a{color:inherit}
+.app{max-width:1720px;margin:0 auto;padding:0 22px 28px}
+
+/* nagłówek inspirowany serwisami PŚk: prosty, czerwony akcent, bez gradientów */
+.top{min-height:82px;display:flex;align-items:center;gap:24px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:14px;margin-right:auto;min-width:240px}
+.brand-badge{width:48px;height:48px;display:grid;place-items:center;background:var(--psk);font-size:0;font-weight:900;letter-spacing:-2px}
+.brand-badge::after{content:'PŚk';font-size:17px;letter-spacing:-1px;color:#fff}
+.brand-text strong{display:block;font-size:21px;line-height:1.05;letter-spacing:-.35px}
+.brand-text span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.9px;margin-top:5px}
+.quick{display:flex;align-items:stretch;gap:0;border:1px solid var(--line);background:var(--surface)}
+.quick a{height:46px;padding:0 14px;display:flex;align-items:center;gap:8px;text-decoration:none;border-right:1px solid var(--line);font-weight:700;font-size:12px;transition:.15s}
+.quick a:last-child{border-right:0}.quick a:hover{background:var(--psk);color:#fff}
+.quick img{width:18px;height:18px;object-fit:contain;background:#fff;padding:1px;border-radius:2px}
+
+.toolbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;padding:0;background:transparent}
+.tabs{display:flex;border:1px solid var(--line);background:var(--surface)}
+.btn{height:40px;border:0;border-right:1px solid var(--line);background:var(--surface);color:#d8d9dc;padding:0 15px;cursor:pointer;font-weight:700;transition:.12s}
+.tabs .btn:last-child{border-right:0}.btn:hover{background:var(--surface-3);color:#fff}.btn.active{background:var(--psk);color:#fff}
+#prevWeek,#nextWeek{width:40px;padding:0;border:1px solid var(--line)}
+.status{margin-left:auto;color:var(--muted);font-size:12px}
+
+.selector{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--psk);padding:16px;margin-bottom:18px;display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:14px 18px}
+.search{width:100%;height:42px;background:#121315;color:#fff;border:1px solid #404248;padding:0 13px;outline:none}.search:focus{border-color:var(--psk)}
+.letters,.buildings{display:flex;gap:5px;flex-wrap:wrap;align-content:start}
+.pill{min-width:34px;height:34px;border:1px solid var(--line);background:var(--surface-2);color:#d8d9dc;padding:0 9px;cursor:pointer;font-weight:700}.pill:hover{border-color:#666970}.pill.active{background:var(--psk);border-color:var(--psk);color:#fff}
+.items{grid-column:1/-1;max-height:260px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+.item{padding:11px 13px;background:#151619;cursor:pointer;border-left:3px solid transparent}.item:hover{background:#202125;border-left-color:var(--psk)}.item.active{background:#242126;border-left-color:var(--psk)}
+.item b{font-size:13px}.item small{display:block;color:#85888f;margin-top:4px;font-size:11px}
+
+.weekhead{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px 0 12px}.weektitle{min-width:300px;text-align:center}.weektitle b{font-size:18px}.weektitle small{display:block;color:var(--muted);margin-top:4px;font-size:12px}
+.calendar-wrap{overflow:auto;border:1px solid var(--line);background:var(--surface)}
+.calendar{min-width:980px;display:grid;grid-template-columns:72px repeat(5,1fr);position:relative}
+.corner,.dayhead{height:50px;position:sticky;top:0;z-index:5;background:#202125;border-bottom:2px solid var(--psk)}
+.dayhead{display:grid;place-items:center;font-size:12px;text-transform:uppercase;letter-spacing:.45px;font-weight:800;border-left:1px solid var(--line)}
+.timecol{position:relative;height:1002px;background:#151619}
+.timecol .corner{position:absolute;top:0;left:0;right:0;height:50px;z-index:7}
+.time{position:absolute;left:0;right:0;height:18px;padding:0 9px;text-align:right;color:#b8bac0;font-size:12px;font-weight:700;line-height:18px;z-index:3}
+.daycol{position:relative;height:1002px;border-left:1px solid var(--line);background:#18191c}
+.daycol::after{content:'';position:absolute;left:0;right:0;top:50px;bottom:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--slot) - 1px),#2a2c30 calc(var(--slot) - 1px),#2a2c30 var(--slot))}
+.daycol>.event,.daycol>.replacement-note,.daycol>.free-day-overlay{z-index:2}
+.daycol>.event:hover{z-index:30}
+.event{position:absolute;left:4px;right:4px;border:1px solid #45474c;background:#24262a;padding:6px 8px;overflow:hidden;color:#f2f2f2;cursor:default;transition:background .14s,border-color .14s,box-shadow .14s;box-shadow:0 2px 4px #0004;min-height:var(--event-h)}
+.event:hover{height:auto!important;min-height:var(--event-h);overflow:visible;background:#2c2e32;border-color:#696c73;z-index:30;box-shadow:0 10px 26px #000c}
+.event.has-more{cursor:pointer}
+.event .hover-groups{display:none;margin:7px -3px -2px;padding:7px 3px 2px;border-top:1px solid #414349}
+.event:hover .hover-groups{display:block}
+.event.popover-up:hover{transform:translateY(calc(-1 * var(--hover-extra, 0px)))}
+.event .groups{display:flex;gap:5px;flex-wrap:wrap;white-space:normal}
+.event .groups span{display:inline-flex;align-items:center;min-height:21px;padding:2px 7px;border:1px solid #3d4045;border-left:4px solid var(--fc,#777);background:#202125;font-size:9px;font-weight:700;color:#e5e6e8}
+.event .groups-label{width:100%;font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:#92969d;margin-bottom:2px}
+.event-top{display:flex;align-items:center;gap:5px;flex-wrap:nowrap;margin-bottom:3px;min-width:0}
+.type-badge{display:inline-flex;align-items:center;height:20px;padding:0 7px;border:1px solid #555960;background:#18191c;font-size:9px;font-weight:900;letter-spacing:.45px;color:#f5f5f5}
+.type-badge.LAB{border-color:#6d9ee8;color:#a9c9ff}.type-badge.PRO{border-color:#d6a84f;color:#f1ce82}.type-badge.WYK{border-color:#d71946;color:#ff9db2}.type-badge.CWI,.type-badge.CW{border-color:#a57bd4;color:#d0b0f2}.type-badge.SEM{border-color:#66a77a;color:#9fd0ad}
+.event .freq{font-size:8px;color:#9da1a8;text-transform:uppercase;letter-spacing:.25px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.event .name{font-weight:800;margin:3px 0 4px;line-height:1.12;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.event .roomwrap{text-align:left;line-height:1}.event .room{display:inline-block;font-size:9px;color:#fff;background:#17181b;border:1px solid #3a3c41;padding:1px 5px}.event .room::before{content:'SALA  ';color:#8e9197;font-size:7px;font-weight:700}
+.group-summary{margin-top:3px;font-size:9px;color:#aeb1b7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.group-summary strong{color:#e6e7e9}.group-one{margin-top:3px;font-size:9px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-left:3px solid var(--fc,#777);padding-left:5px;color:#e6e7e9}
+.faculty-section{grid-column:1/-1;background:#111214}.faculty-title{padding:9px 12px;border-left:6px solid var(--fc);background:#202125;font-weight:800;letter-spacing:.2px}.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1px;background:var(--line-soft)}.faculty-grid .item{border-left:3px solid transparent}.faculty-grid .item:hover,.faculty-grid .item.active{border-left-color:var(--fc)}
+.empty{grid-column:1/-1;padding:42px;text-align:center;color:var(--muted);background:#151619}.hidden{display:none!important}
+
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:#151619}::-webkit-scrollbar-thumb{background:#3a3c41}::-webkit-scrollbar-thumb:hover{background:#505258}
+@media(max-width:900px){.app{padding:0 10px 20px}.top{align-items:flex-start;flex-direction:column;padding:14px 0}.brand{width:100%}.quick{width:100%;overflow:auto}.quick a{flex:1;justify-content:center;min-width:105px}.selector{grid-template-columns:1fr}.items{grid-template-columns:1fr}.status{width:100%;margin-left:0}.weektitle{min-width:0;flex:1}}
+
+.quick-calendar-icon{width:18px;height:18px;display:grid;place-items:center;background:var(--psk);color:#fff;font-size:10px;font-weight:900;border-radius:2px}
+
+
+/* Grupy: Wydział -> kierunek -> semestr */
+.faculty-tree{border:1px solid var(--line);background:#111214;margin-bottom:10px}
+.faculty-tree .faculty-title{display:flex;align-items:baseline;gap:9px;padding:10px 13px;border-left:6px solid var(--fc);background:#202125}
+.faculty-tree .faculty-title strong{font-size:14px;color:#fff}
+.faculty-tree .faculty-title span{font-size:12px;color:#9b9ea5;font-weight:500}
+.programme-list{padding:0 12px 12px}
+.programme-section{border-top:1px solid #303238;padding:13px 0 3px}
+.programme-section:first-child{border-top:0}
+.programme-title{font-size:14px;font-weight:800;color:#f1f1f2;margin:0 0 10px;padding-left:10px;border-left:3px solid var(--fc)}
+.semester-block{display:grid;grid-template-columns:125px minmax(0,1fr);border-top:1px solid #24262b;min-height:52px}
+.semester-block:first-of-type{border-top:0}
+.semester-title{padding:10px 10px 8px;color:#d9dade;font-size:12px;font-weight:800;background:#17181b}
+.semester-title span{display:block;margin-top:3px;color:#747881;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.35px}
+.semester-groups{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;padding:7px 8px;background:#131416}
+.group-item{appearance:none;text-align:left;min-width:145px;max-width:260px;padding:7px 9px;border:1px solid #33363c;border-left:3px solid var(--fc);background:#1b1c20;color:#f0f1f2;cursor:pointer;font:inherit}
+.group-item:hover{background:#25272c;border-color:#555a63;border-left-color:var(--fc)}
+.group-item b{display:block;font-size:11px;line-height:1.25}
+.group-item small{display:block;color:#858a93;font-size:9px;line-height:1.25;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:720px){.semester-block{grid-template-columns:1fr}.semester-title{border-bottom:1px solid #24262b}.group-item{flex:1 1 160px;max-width:none}}
+
+/* Ulubione */
+.favorites-toggle{display:inline-flex;align-items:center;gap:7px;border-color:#4a4d53}.favorites-toggle .star{font-size:15px;color:#777}.favorites-toggle #favoritesCount{min-width:18px;height:18px;padding:0 5px;display:inline-grid;place-items:center;background:#292b30;border:1px solid #41444a;font-size:9px;color:#c9cbd0}.favorites-toggle.active{background:#29230f;color:#fff1b8;border-color:#8d741e}.favorites-toggle.active .star{color:#f0c83f}.favorites-toggle.active #favoritesCount{background:#443913;border-color:#8d741e;color:#ffe47a}
+.item,.group-item{position:relative;padding-right:38px}.fav-star{position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;display:grid;place-items:center;color:#858990;font-size:18px;line-height:1;cursor:pointer;user-select:none;z-index:3}.fav-star:hover{color:#f0c83f;background:#29230f}.item.favorite,.group-item.favorite{background:#1c1b16}.item.favorite .fav-star,.group-item.favorite .fav-star{color:#f0c83f}.item.favorite{border-left-color:#b99624}.group-item.favorite{border-color:#5b512c;border-left-color:var(--fc)}
+
+/* Prowadzący na kafelkach zajęć */
+.lecturer-one,.lecturers-inline{margin-top:4px;font-size:9px;line-height:1.25;color:#d7d9dd}
+.lecturer-one::before,.lecturers-inline::before{content:'PROW. ';font-size:7px;font-weight:800;letter-spacing:.35px;color:#8f949c}
+.lecturers-inline{display:flex;flex-direction:column;gap:1px}
+.lecturers-inline::before{display:block}
+.lecturers-inline span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lecturer-summary{margin-top:4px;font-size:9px;color:#aeb1b7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lecturer-summary strong{color:#e6e7e9}
+.hover-lecturers{display:none;margin:7px -3px -2px;padding:7px 3px 2px;border-top:1px solid #414349}
+.event:hover .hover-lecturers{display:block}
+.lecturers-list{display:flex;gap:5px;flex-wrap:wrap;white-space:normal}
+.lecturers-list>span{display:inline-flex;align-items:center;min-height:21px;padding:2px 7px;border:1px solid #3d4045;background:#202125;font-size:9px;font-weight:700;color:#e5e6e8}
+.lecturers-label{width:100%;font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:#92969d;margin-bottom:2px}
+
+/* Kalendarz akademicki w planie */
+.day-date-label{position:absolute;top:0;left:0;right:0;height:50px;z-index:6;background:#202125;border-bottom:2px solid var(--psk);display:flex;align-items:center;justify-content:center;gap:7px;padding:4px 6px;text-align:center}
+.day-date-label>b{font-size:11px;letter-spacing:.35px}.day-date-label>span:not(.day-badge){font-size:10px;color:#90949b}
+.day-badge{position:absolute;left:5px;right:5px;bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:7px;line-height:12px;font-weight:800;text-transform:uppercase;letter-spacing:.25px}
+.parity-badge{color:#aeb2b9}.replacement-badge{color:#ffd078}.free-badge{color:#b4b7bd}
+.free-day{background:repeating-linear-gradient(135deg,#151619 0,#151619 10px,#18191c 10px,#18191c 20px)!important}
+.free-day .day-date-label{border-bottom-color:#55585f}.free-day-overlay{position:absolute;inset:50px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#777b83;text-align:center;padding:15px;background:#111214aa;z-index:2}
+.free-day-overlay strong{font-size:22px;letter-spacing:2px;color:#9a9da3}.free-day-overlay span{font-size:11px;max-width:150px;line-height:1.35}
+.replacement-day .day-date-label{border-bottom-color:#d6a84f}.replacement-note{position:absolute;top:54px;right:5px;z-index:20;max-width:calc(100% - 10px);padding:3px 6px;background:#352b16;border:1px solid #6c5727;color:#f0ca76;font-size:8px;font-weight:800;text-transform:uppercase;pointer-events:none}

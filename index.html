@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plan PŚk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="theme-color" content="#C92130">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Portal PŚk">
+
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+
+<body>
+    <div class="app">
+        <div class="top">
+            <div class="brand">
+                <div class="brand-text"><strong>Plan zajęć</strong><span>Politechnika Świętokrzyska</span></div>
+            </div>
+            <div class="quick">
+                <a href="https://usosweb.tu.kielce.pl/" target="_blank" rel="noopener"><img
+                        src="https://usosweb.tu.kielce.pl/favicon.ico" alt="">USOS</a>
+                <a href="https://moodle.tu.kielce.pl/" target="_blank" rel="noopener"><img
+                        src="https://weaii-moodle.tu.kielce.pl/favicon.ico"
+                        onerror="this.src='https://weaii-moodle.tu.kielce.pl/favicon.ico'" alt="">Moodle</a>
+                <a href="https://achilles.tu.kielce.pl/portal/" target="_blank" rel="noopener"><img
+                        src="https://achilles.tu.kielce.pl/portal/favicon.ico" alt="">Achilles</a>
+                <a href="https://tu.kielce.pl/" target="_blank" rel="noopener"><img
+                        src="https://tu.kielce.pl/favicon.ico" alt="">PŚk</a>
+                <a href="kalendarz/" rel="noopener"><span class="quick-calendar-icon">K</span>Kalendarz</a>
+                <a href="baza/" rel="noopener"><span class="quick-calendar-icon">B</span>Baza pracowników</a>
+            </div>
+        </div>
+        <div class="toolbar">
+            <div class="tabs"><button class="btn mode active" data-mode="ft">Stacjonarne</button><button
+                    class="btn mode" data-mode="pt">Niestacjonarne</button></div>
+            <div class="tabs"><button class="btn tab active" data-tab="lecturers">Prowadzący</button><button
+                    class="btn tab" data-tab="groups">Grupy</button><button class="btn tab"
+                    data-tab="rooms">Sale</button></div><button class="btn favorites-toggle" id="favoritesToggle"
+                title="Pokaż tylko ulubione" aria-pressed="false"><span class="star">★</span> Ulubione <span
+                    id="favoritesCount">0</span></button><span class="status" id="status">⏳ Ładowanie…</span>
+        </div>
+        <div class="selector" id="selector"><input id="search" class="search" placeholder="Szukaj…">
+            <div id="filters" class="letters"></div>
+            <div id="items" class="items"></div>
+        </div>
+        <div id="planArea">
+            <div class="weekhead"><button class="btn" id="prevWeek">‹</button>
+                <div class="weektitle"><b id="weekRange">Plan typowy</b><small id="weekMeta">wybierz prowadzącego, grupę
+                        lub salę</small></div><button class="btn" id="nextWeek">›</button>
+            </div>
+            <div class="calendar-wrap">
+                <div id="calendar" class="calendar"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/service-worker.js", {
+                        scope: "/"
+                    })
+                    .catch(error => {
+                        console.error(
+                            "Błąd rejestracji PWA:",
+                            error
+                        );
+                    });
+            });
+        }
+</script>
+</body>
+
+</html>
